@@ -1,35 +1,49 @@
-import Container from 'react-bootstrap/Container';
-import Nav from 'react-bootstrap/Nav';
-import Navbar from 'react-bootstrap/Navbar';
-import NavDropdown from 'react-bootstrap/NavDropdown';
+import Container from "react-bootstrap/Container";
+import Nav from "react-bootstrap/Nav";
+import Navbar from "react-bootstrap/Navbar";
+import NavDropdown from "react-bootstrap/NavDropdown";
+import { LinkContainer } from "react-router-bootstrap";
+import { Link } from "react-router-dom";
 
-function header() {
+function Header() {
   return (
     <Navbar collapseOnSelect expand="lg" className="bg-body-tertiary">
       <Container>
-        <Navbar.Brand href="#WingManFoundation"><strong>WingMan Foundation</strong></Navbar.Brand>
+        <LinkContainer to="/">
+          <Navbar.Brand href="#WingManFoundation">
+            <strong>WingMan Foundation</strong>
+          </Navbar.Brand>
+        </LinkContainer>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="me-auto">
-            <Nav.Link href="#Home">Home</Nav.Link>
-            <Nav.Link href="#AboutUs">About Us</Nav.Link>
+            <LinkContainer to="/">
+              <Nav.Link>Home</Nav.Link>
+            </LinkContainer>
+            <LinkContainer to="/AboutUs">
+              <Nav.Link>About Us</Nav.Link>
+            </LinkContainer>
             <NavDropdown title="OurWork" id="collasible-nav-dropdown">
               {/* <NavDropdown.Item href="#action/3.1">Maatrachaya</NavDropdown.Item> */}
-              <NavDropdown.Item href="#action/3.2">
-                Rural
-              </NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.3">Urban</NavDropdown.Item>
+              <LinkContainer to="/rural">
+                <NavDropdown.Item>Rural</NavDropdown.Item>
+              </LinkContainer>
+              <LinkContainer to="/urban">
+                <NavDropdown.Item>Urban</NavDropdown.Item>
+              </LinkContainer>
               <NavDropdown.Divider />
-              <NavDropdown.Item href="#action/3.4">
-                Media
-              </NavDropdown.Item>
+              <LinkContainer to="/media">
+                <NavDropdown.Item>Media</NavDropdown.Item>
+              </LinkContainer>
             </NavDropdown>
           </Nav>
           <Nav>
-            <Nav.Link href="#contactus">Contact Us</Nav.Link>
-            <Nav.Link eventKey={2} href="#getinvolved">
-              Get Involved
-            </Nav.Link>
+            <LinkContainer to="/contactus">
+              <Nav.Link>Contact Us</Nav.Link>
+            </LinkContainer>
+            <LinkContainer to="/registration">
+              <Nav.Link eventKey={2}>Get Involved</Nav.Link>
+            </LinkContainer>
           </Nav>
         </Navbar.Collapse>
       </Container>
@@ -37,4 +51,4 @@ function header() {
   );
 }
 
-export default header;
+export default Header;
