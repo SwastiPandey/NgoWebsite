@@ -2,8 +2,13 @@ import "./App.css";
 
 import { Outlet } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
+
 import Header from "./components/header";
 import ContactForm from "./pages/ContactUs";
+
+
+// import Header from "./components/Header.jsx";
+import Footer from "./components/Footer.jsx";
 
 
 function App() {
@@ -11,7 +16,11 @@ function App() {
     <div>
       <Header />
       <Outlet />
+
     
+
+      <Footer />
+
     </div>
   );
 }
