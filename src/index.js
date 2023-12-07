@@ -12,13 +12,15 @@ import AboutUs from "./pages/AboutUs";
 import RegistrationForm from "./pages/registration";
 import { Home } from "./pages/home";
 import NotFound from "./pages/NotFound";
+import ContactForm from "./pages/ContactUs";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path="/" element={<App />}>
       <Route path="/" index={true} element={<Home />} />
-      <Route path="/registration" element={<RegistrationForm />} />
+      {/* <Route path="/registration" element={<RegistrationForm />} /> */}
       <Route path="/AboutUs" element={<AboutUs />} />
+      <Route path="/ContactUs" element={<ContactForm />}/>
 
       <Route path="*" element={<NotFound />} />
     </Route>

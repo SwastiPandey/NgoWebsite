@@ -4,9 +4,14 @@ import Navbar from "react-bootstrap/Navbar";
 import NavDropdown from "react-bootstrap/NavDropdown";
 import { LinkContainer } from "react-router-bootstrap";
 import { Link } from "react-router-dom";
+import ContactForm from "../pages/ContactUs";
+import { useState } from "react";
 
 function Header() {
+  
   return (
+
+    
     <Navbar collapseOnSelect expand="lg" className="bg-body-tertiary">
       <Container>
         <LinkContainer to="/">
@@ -23,31 +28,24 @@ function Header() {
             <LinkContainer to="/AboutUs">
               <Nav.Link>About Us</Nav.Link>
             </LinkContainer>
-            <NavDropdown title="OurWork" id="collasible-nav-dropdown">
-              {/* <NavDropdown.Item href="#action/3.1">Maatrachaya</NavDropdown.Item> */}
-              <LinkContainer to="/rural">
-                <NavDropdown.Item>Rural</NavDropdown.Item>
-              </LinkContainer>
-              <LinkContainer to="/urban">
-                <NavDropdown.Item>Urban</NavDropdown.Item>
-              </LinkContainer>
-              <NavDropdown.Divider />
-              <LinkContainer to="/media">
-                <NavDropdown.Item>Media</NavDropdown.Item>
-              </LinkContainer>
-            </NavDropdown>
+            <LinkContainer to="/OurWork">
+            <Nav.Link>Our Work</Nav.Link>
+            </LinkContainer>
+              
           </Nav>
           <Nav>
+            
             <LinkContainer to="/contactus">
-              <Nav.Link>Contact Us</Nav.Link>
+              <Nav.Link eventKey={1}>Contact Us</Nav.Link>
             </LinkContainer>
-            <LinkContainer to="/registration">
+            {/* <LinkContainer to="/registration">
               <Nav.Link eventKey={2}>Get Involved</Nav.Link>
-            </LinkContainer>
+            </LinkContainer> */}
           </Nav>
         </Navbar.Collapse>
       </Container>
     </Navbar>
+    
   );
 }
 
